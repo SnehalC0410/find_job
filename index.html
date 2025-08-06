@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>landing_page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!-- Load Header HTML -->
+  <div id="header"></div>
+
+  <script>
+    fetch('header/header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+  </script>
+
+ <!-- Hero HTML -->
+  <div id="hero"></div>
+
+  <script>
+    fetch('hero/hero.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('hero').innerHTML = data;
+      });
+  </script>
+
+
+
+
+</body>
+
+

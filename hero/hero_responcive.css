@@ -1,0 +1,15 @@
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .hero-btn {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+}

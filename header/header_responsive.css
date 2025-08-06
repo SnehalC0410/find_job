@@ -1,0 +1,29 @@
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 40px;
+  }
+
+  .nav-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    align-self: flex-start;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+}
