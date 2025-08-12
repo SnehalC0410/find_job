@@ -1,0 +1,14 @@
+/* Responsive: Show 1 card on mobile */
+@media (max-width: 1024px) {
+  .testimonial-section {
+    flex-direction: column;
+  }
+  .testimonial-slider {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .testimonial-card {
+    width: 90%;
+    height: auto;
+  }
+}

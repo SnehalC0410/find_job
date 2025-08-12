@@ -9,7 +9,6 @@
 <body>
      <!-- Load Header HTML -->
   <div id="header"></div>
-
   <script>
     fetch('header/header.html')
       .then(res => res.text())
@@ -20,12 +19,64 @@
 
  <!-- Hero HTML -->
   <div id="hero"></div>
-
   <script>
     fetch('hero/hero.html')
       .then(res => res.text())
       .then(data => {
         document.getElementById('hero').innerHTML = data;
+      });
+  </script>
+
+  <!-- automated HTML -->
+  <div id="automated"></div>
+  <script>
+    fetch('automated/automated_cards.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('automated').innerHTML = data;
+      });
+  </script>
+
+<!-- about us -->
+  <div id="about_us"></div>
+  <script>
+    fetch('about_us/about_us.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('about_us').innerHTML = data;
+      });
+  </script>
+
+  <!-- testomonial -->
+  <div id="testomonial"></div>
+  <script>
+    fetch('testomonial/testomonial.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('testomonial').innerHTML = data;
+      });
+  </script>
+
+
+
+  <!-- clints -->
+  <div id="clints"></div>
+  <script>
+    fetch('clints/clints.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('clints').innerHTML = data;
+      });
+  </script>
+
+
+    <!-- footer -->
+  <div id="footer"></div>
+  <script>
+    fetch('footer/footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
       });
   </script>
 

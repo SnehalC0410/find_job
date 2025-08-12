@@ -12,3 +12,41 @@
 @import url(hero/hero_responcive.css);
 
 
+/* automated */
+@import url('automated/automated_cards.css');
+
+/* responcive */
+@import url(automated/automated_cards_responcive.css);
+
+
+/* about us */
+@import url('about_us/about_us.css');
+
+/* responcive */
+@import url(about_us/about_us_responcive.css);
+
+
+
+/* testomonial */
+@import url('testomonial/testomonial.css');
+
+/* responcive */
+@import url(testomonial/testomonial_responcive.css);
+
+
+/* numbers */
+@import url('clints/clints.css');
+
+/* responcive */
+@import url(clints/clints_responsive.css);
+
+
+/* footer */
+@import url('footer/footer.css');
+
+/* responcive */
+@import url(footer/footer.css);
+
+
+
+

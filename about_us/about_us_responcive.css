@@ -1,0 +1,32 @@
+/* ✅ Responsive */
+@media (max-width: 1024px) {
+  .job-discovery-section {
+    flex-direction: column;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-box {
+    width: 100%;
+    max-width: 428px;
+    height: auto;
+    border-radius: 24px;
+  }
+
+  .image-box img {
+    width: 100%;
+    height: auto;
+  }
+
+  .content-box {
+    padding: 40px 20px;
+  }
+
+  .content-box h2 {
+    font-size: 24px;
+  }
+}

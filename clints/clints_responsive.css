@@ -1,0 +1,20 @@
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .logo-container {
+    gap: 40px;
+  }
+
+  .logo-container img {
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-container {
+    gap: 30px;
+  }
+
+  .logo-container img {
+    height: 36px;
+  }
+}

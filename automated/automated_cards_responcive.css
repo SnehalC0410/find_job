@@ -1,0 +1,15 @@
+/* Responsive */
+@media (max-width: 1200px) {
+  .card-container {
+    justify-content: space-between;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .job-finder-section {
+    padding: 40px 20px;
+  }
+}
