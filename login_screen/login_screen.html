@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Screen</title>
+    <!-- Link to the main CSS file -->
+    <link rel="stylesheet" href="login_screen.css">
+    <!-- Link to the responsive CSS file -->
+    <link rel="stylesheet" href="loginscreen_responsive.css">
+</head>
+
+
+<body>
+  <div class="background"></div>
+
+  <div class="login-card">
+    <h1>Welcome back! <span>Olivia</span></h1>
+    <p class="subtitle">Nice to see you again!</p>
+
+    <form>
+      <label>Email or phone number</label>
+      <input type="text" placeholder="1234556789">
+
+      <label>Enter password</label>
+      <div class="password-wrapper">
+        <input type="password" placeholder="**********" id="password">
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+      </div>
+
+      <div class="forgot">
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+
+      <div class="divider"><span>or</span></div>
+
+      <button type="button" class="google-btn">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google">
+        Google
+      </button>
+    </form>
+
+    <p class="signup">Don’t have an account? <a href="#">Get Started</a></p>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const input = document.getElementById("password");
+      input.type = input.type === "password" ? "text" : "password";
+    }
+  </script>
+</body>
+</html>

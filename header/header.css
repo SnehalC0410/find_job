@@ -14,8 +14,8 @@
       padding: 30px 100px;
       background-color: #fff;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
       flex-wrap: wrap;
     }
 
