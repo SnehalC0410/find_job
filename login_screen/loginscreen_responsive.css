@@ -1,7 +1,6 @@
-/* Responsive */
-@media (max-width: 480px) {
-  .login-card {
-    padding: 30px 20px;
-    max-width: 90%;
+@media (max-width: 600px) {
+  form input[type="text"],
+  form input[type="email"] {
+    width: 100%;   /* full width on small screens */
   }
 }

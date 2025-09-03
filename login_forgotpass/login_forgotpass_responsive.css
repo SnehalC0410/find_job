@@ -1,0 +1,18 @@
+/* Responsive */
+@media (max-width: 600px) {
+  .forgot-card {
+    padding: 30px 20px;
+  }
+
+  .forgot-card h1 {
+    font-size: 28px;
+  }
+
+  .forgot-card h2 {
+    font-size: 22px;
+  }
+
+  form input, .submit-btn {
+    width: 100%;
+  }
+}

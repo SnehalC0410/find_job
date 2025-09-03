@@ -1,0 +1,19 @@
+/* Responsive */
+@media (max-width: 600px) {
+  .signup-card {
+    padding: 30px 20px;
+  }
+
+  .signup-card h1 {
+    font-size: 26px;
+  }
+
+  .signup-btn {
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  form input {
+    font-size: 20px;
+  }
+}

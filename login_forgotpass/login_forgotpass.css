@@ -1,0 +1,118 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background */
+.background {
+  background: url('../assets/images/poster_img.jpg') no-repeat center center/cover;
+  filter: blur(8px) brightness(0.9);
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+}
+
+/* Card */
+.forgot-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 60px 70px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.forgot-card h1 {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.forgot-card h1 span {
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.forgot-card h2 {
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.forgot-card .info {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form label {
+  align-self: flex-start;
+  font-size: 20px;
+  margin-bottom: 6px;
+  color: #000;
+}
+
+form input {
+  width: 500px;        /* fixed desktop width */
+  max-width: 100%;     /* responsive */
+  padding: 12px;
+  border: 1px solid #868686;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Button */
+.submit-btn {
+  width: 500px;        /* same as input */
+  max-width: 100%;
+  padding: 10px;
+  background: #004b80;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #00365d;
+}
+
+/* Help text */
+.help-text {
+  margin-top: 25px;
+  font-size: 20px;
+  color: #333;
+}
+
+.help-text a {
+  color: #004b80;
+  font-weight: 600;
+  text-decoration: none;
+}
