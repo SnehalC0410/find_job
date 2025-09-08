@@ -20,18 +20,19 @@
     <h2>Forgot your password?</h2>
     <p class="info">No problem please follow the information.</p>
 
-    <form>
-      <label for="email">Enter your email or mobile number</label>
-      <input type="text" id="email" placeholder="Type your email or mobile number">
 
-      <button type="submit" class="submit-btn">Submit</button>
-    </form>
+<form action="/login_submit_forgotpass/login_submit.html" method="POST">
+  <label for="email">Enter your email or mobile number</label>
+  <input type="text" id="email" name="email" placeholder="Type your email or mobile number" required>
 
-    <p class="help-text">
-      Having problem with changing password? <br>
-      Contact <a href="C:/Users/User/Desktop/find_job/login_submit_forgotpass">Admin</a>
-    </p>
-    
+  <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+<p class="help-text">
+  Having problem with changing password? <br>
+  Contact <a href="#">Admin</a>
+</p>
+
   </div>
 </body>
 </html>
