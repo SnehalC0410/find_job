@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Reset</title>
+  <!-- Link to the main CSS file -->
+    <link rel="stylesheet" href="login_submit.css">
+    <!-- Link to the responsive CSS file -->
+    <link rel="stylesheet" href="login_submit._responsive.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Welcome back! <span class="name">Olivia</span></h1>
+      <p>Nice to see you again!</p>
+      <h2>Reset your password</h2>
+      
+      <form>
+        <label for="password">Enter your new password</label>
+        <!-- Inside the form -->
+        <div class="input-group">
+         <input type="password" id="password" />
+        <img src="../assets/icons/closed_eye.svg" alt="Toggle" class="toggle" onclick="togglePassword('password', this)" />
+         </div>        
+
+        <label for="confirm">Confirm your new password</label>
+        <div class="input-group">
+        <input type="password" id="confirm" />
+        <img src="../assets/icons/closed_eye.svg" alt="Toggle" class="toggle" onclick="togglePassword('confirm', this)" />
+         </div>
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+  function togglePassword(id, el) {
+    const input = document.getElementById(id);
+    const isHidden = input.type === 'password';
+    
+    input.type = isHidden ? 'text' : 'password';
+    el.src = isHidden 
+      ? 'assets/icons/open_eye.svg' 
+      : 'assets/icons/closed_eye.svg';
+  }
+</script>
+</body>
+</html>
