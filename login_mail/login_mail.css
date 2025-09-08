@@ -1,0 +1,84 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  background: url('../assets/images/poster_img.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 50px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 1.5rem;
+  font-style: normal;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #004080;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #002c5f;
+}
+
+.alternative {
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.alternative a {
+  color: #004080;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.alternative a:hover {
+  text-decoration: underline;
+}
+

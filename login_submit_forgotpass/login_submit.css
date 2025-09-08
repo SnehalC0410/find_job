@@ -17,61 +17,71 @@ body {
 /* Main Container */
 .container {
   backdrop-filter: blur(8px);
-  background-color: rgba(255, 255, 255, 0.4);
-  padding: 2rem;
+  background-color: rgba(252, 249, 249, 0.652);
+  padding: 50px;
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   max-width: 500px;
   width: 90%;
 }
 
-/* Card */
+/* Card Headings and Paragraph */
 .card h1 {
-  font-size: 1.8rem;
+  font-size: 40px;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  text-align: center;
+  text-align: center;  
+
 }
 
 .card .name {
   color: #000;
+  font-weight: 400;
 }
 
 .card p {
   text-align: center;
-  font-size: 1rem;
+  font-size: 24px;
   color: #333;
+  margin-bottom: 10px; /* Space between "Nice to see you again!" and "Reset your password" */
 }
 
 .card h2 {
   text-align: center;
-  font-size: 1.2rem;
-  margin: 1rem 0;
+  font-size: 32px;
+  margin-bottom: 40px;
   color: #000;
+  font-style:100px;
 }
 
 /* Form */
 form {
   display: flex;
   flex-direction: column;
-  gap: 40px; /* Space between the two input groups */
 }
 
+/* Label spacing */
 label {
-  font-size: 0.9rem;
+  font-size: 16px;
   color: #333;
+  margin-bottom: 16px; /* Space between label and input field */
 }
 
 .input-group {
   position: relative;
-  width: 500px;   /* Fixed width */
-  max-width: 100%; /* Responsive: prevents overflow on small screens */
+  width: 500px;
+  max-width: 100%;
+}
+
+/* Space between the two input groups */
+.input-group + label {
+  margin-top: 30px; /* Adds space between the first input group and the next label */
 }
 
 input[type="password"],
 input[type="text"] {
-  width: 100%; /* Takes full width of .input-group */
-  padding: 0.8rem 2.5rem 0.8rem 0.8rem;
+  width: 100%;
+  padding: 14px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
@@ -88,10 +98,10 @@ input[type="text"] {
   height: 20px;
 }
 
-
 /* Button */
 button {
-  padding: 0.9rem;
+  margin-top: 40px; /* Separate the button from input fields */
+  padding: 14px;
   background-color: #004080;
   color: white;
   font-weight: bold;
@@ -99,8 +109,12 @@ button {
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
+  font-size: 16px;
+  
 }
 
 button:hover {
   background-color: #002c5f;
 }
+
+

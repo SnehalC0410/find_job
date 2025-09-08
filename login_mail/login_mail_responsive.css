@@ -1,0 +1,11 @@
+/* Responsive Design */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input[type="email"], button {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+}
