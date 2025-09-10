@@ -1,6 +1,21 @@
 @media (max-width: 768px) {
-    body {
+    header {
         flex-direction: column;
+        align-items: stretch;
+    }
+
+    .header-group-left,
+    .header-group-right {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+}
+    .header-group input.search-input {
+        width: 100%;
     }
 
     .sidebar {
@@ -25,6 +40,6 @@
     .job-card {
         width: 100%;
     }
-}
+
 
 
