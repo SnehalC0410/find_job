@@ -3,22 +3,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const jobCardsContainer = document.getElementById('jobCardsContainer');
     let allJobs = [];
 
-    const apiURL = 'http://194.24.161.189:8080/jobs/all';
+    const remotiveApiURL = 'https://remotive.com/api/remote-jobs';
+    const searchAPI = 'https://yourdomain.com/api/jobs/search';
 
-    fetch(apiURL)
-        .then(response => {
-            if (!response.ok) throw new Error('Network response was not ok');
-            return response.json();
-        })
+    // Function to fetch jobs (GET or POST)
+    function fetchJobs(apiURL, method = 'GET', payload = null) {
+        const options = {
+            method,
+            headers: { 'Content-Type': 'application/json' }
+        };
+
+        if (method === 'POST' && payload) {
+            options.body = JSON.stringify(payload);
+        }
+
+        return fetch(apiURL, options)
+            .then(response => {
+                if (!response.ok) throw new Error('Network error');
+                return response.json();
+            });
+    }
+
+    // Fetch all jobs using the GET API
+    fetchJobs(remotiveApiURL)
         .then(data => {
-            allJobs = data;
+            allJobs = data.jobs;
             renderJobCards(allJobs);
         })
         .catch(error => {
-            console.error('Error fetching jobs:', error);
+            console.error('Error:', error);
             jobCardsContainer.innerHTML = '<p class="error">Failed to load job postings.</p>';
         });
 
+    // Render job cards
     function renderJobCards(jobs) {
         if (jobs.length === 0) {
             jobCardsContainer.innerHTML = '<p>No job postings found.</p>';
@@ -26,43 +43,44 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         jobCardsContainer.innerHTML = jobs.map(job => `
-            <div style="background-color: #ffffff; padding: 1.5rem; border-radius: 12px; max-width: 400px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: flex; flex-direction: column; gap: 1rem; font-family: Arial, sans-serif;">
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: #eef5fb; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.25rem; color: #005b96;">
-                        W
-                    </div>
-                    <div style="flex-grow: 1;">
-                        <h3 style="margin: 0;">${job.title}</h3>
-                        <p style="margin: 0; color: #555;">${job.company}</p>
-                    </div>
-                    <span style="background-color: #005b96; color: #ffffff; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: bold;">New</span>
-                </div>
-
-                <p style="margin: 0;">📍 ${job.location}</p>
-                <span style="background-color: #eef5fb; color: #005b96; padding: 0.25rem 0.5rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;">${job.remote ? 'Remote' : 'On-site'}</span>
-                <p style="margin: 0;">💼 ${job.experience}</p>
-                <p style="margin: 0;">📅 ${job.postedDate} / ${job.duration}</p>
-
-                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0;">
-                    ${job.tags.map(tag => `<span style="background-color: #eef5fb; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.8rem; color: #005b96;">${tag}</span>`).join('')}
-                </div>
-
-                <p style="font-style: italic; color: #555; font-size: 0.95rem;">"${job.description}"</p>
-
-                <button style="background-color: #005b96; color: #ffffff; border: none; padding: 0.75rem; border-radius: 8px; cursor: pointer; font-size: 1rem; width: 100%; text-align: center; transition: background-color 0.3s ease;"
-                    onclick="alert('View details for ${job.title}')">
-                    View Details
-                </button>
+            <div style="background: #fff; padding: 1.5rem; border-radius: 12px;">
+                <h3>${job.title}</h3>
+                <p>${job.company_name}</p>
+                <p>📍 ${job.candidate_required_location}</p>
+                <span>${job.remote ? 'Remote' : 'On-site'}</span>
+                <p>💼 ${job.category}</p>
+                <p>📅 Published: ${new Date(job.publication_date).toLocaleDateString()}</p>
+                <p>"${job.description.substring(0, 200)}..."</p>
+                <a href="${job.url}" target="_blank">View Job</a>
             </div>
         `).join('');
     }
 
+    // Search logic with POST API fallback
     jobSearchInput.addEventListener('input', () => {
-        const searchTerm = jobSearchInput.value.trim().toLowerCase();
-        const filteredJobs = allJobs.filter(job =>
-            `${job.title} ${job.company} ${job.position} ${job.location} ${job.tags.join(' ')}`.toLowerCase()
-                .includes(searchTerm)
-        );
-        renderJobCards(filteredJobs);
+        const searchTerm = jobSearchInput.value.trim();
+
+        // If the search term is empty, show all jobs
+        if (searchTerm === '') {
+            renderJobCards(allJobs);
+            return;
+        }
+
+        // POST API search (If available)
+        const searchPayload = { keyword: searchTerm };
+
+        fetchJobs(searchAPI, 'POST', searchPayload)
+            .then(data => {
+                allJobs = data.jobs || data;
+                renderJobCards(allJobs);
+            })
+            .catch(() => {
+                // Fallback to local filtering of all jobs if the POST request fails
+                const filteredJobs = allJobs.filter(job =>
+                    `${job.title} ${job.company_name} ${job.category} ${job.candidate_required_location}`.toLowerCase()
+                        .includes(searchTerm.toLowerCase())
+                );
+                renderJobCards(filteredJobs);
+            });
     });
 });
