@@ -69,7 +69,7 @@ body {
     margin-top: auto;
     background-color: transparent;
     border: 2px solid #09436A;
-    padding: 8px 10px;
+    padding: 6px 8px;
     border-radius: 6px;
     cursor: pointer;
     display: flex;
@@ -114,7 +114,7 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: #EEF7FD;
-    padding: 10px 20px;
+    padding: 10px 14px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap;
@@ -168,16 +168,16 @@ header {
     color: #ffffff;
     border: none;
     border-radius: 4px;
-    padding: 0.5rem 1rem;
+    padding: 8px 14px;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 4px;
     cursor: pointer;
 }
 
 .profile img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
 }
 
 .action-buttons {
@@ -185,7 +185,7 @@ header {
     justify-content: flex-end;
     gap: 1rem;
     margin-bottom: 1.5rem;
-    padding: 30px 20px;
+    padding: 20px 20px;
 }
 
 .action-buttons button {
@@ -195,16 +195,16 @@ header {
     background-color: #005b96;
     color: #ffffff;
     border: none;
-    padding: 0.6rem 1.2rem;
+    padding: 8px 10px;
     border-radius: 6px;
-    font-size: 1rem;
+    font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .action-buttons button img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     transition: filter 0.3s ease;
 }
 
