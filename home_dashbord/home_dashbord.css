@@ -186,8 +186,6 @@ header {
     gap: 10px; /* Controls overall spacing */
 }
 
-
-
 .search-input {
     width: 300px;
     padding: 0.5rem 1rem;
@@ -434,7 +432,7 @@ header {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 16px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
@@ -442,8 +440,8 @@ header {
 
 /* Company Logo */
 .job-card img {
-  width: 60px;
-  height: 60px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
   margin-bottom: 10px;
 }
@@ -495,7 +493,7 @@ header {
 }
 
 .job-description::after {
-  content: '';
+  content: '';  
   position: absolute;
   bottom: 0;
   left: 0;
@@ -512,7 +510,7 @@ header {
   padding: 6px 12px;
   text-align: center;
   border-radius: 4px;
-  font-size: 0.85rem;
+  font-size: 16px;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }

@@ -55,11 +55,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${job.company_logo}" alt="${job.company_name} Logo" style="width: 50px; height: 50px; object-fit: contain;">
                     <h3>${job.title}</h3>
                     <p><strong>Company:</strong> ${job.company_name}</p>
-                    <p>📍 <strong>Location:</strong> ${job.candidate_required_location}</p>
+                    
+                    <p>
+                    <img src="../assets/icons/location_trd_card.svg" alt="Location Icon"  style="vertical-align: middle;">
+                    ${job.candidate_required_location}
+                    </p>
+
                     <span><strong>Type:</strong> ${job.job_type === 'full_time' ? 'Full Time' : 'Part Time'}</span><br>
                     <span><strong>Salary:</strong> ${job.salary || 'Not specified'}</span><br>
-                    <p>💼 <strong>Category:</strong> ${job.category}</p>
-                    <p>📅 <strong>Published:</strong> ${new Date(job.publication_date).toLocaleDateString()}</p>
+                    <p>
+                     <img src="../assets/icons/work_outline.svg" alt="Type Icon" width="10" height="10" style="vertical-align: middle;">
+                    ${job.job_type === 'full_time' ? 'Full Time' : 'Part Time'}
+                </p>
+
+                    <p> 
+                    <img src="../assets/icons/calender_trd_card.svg" alt="Salary Icon" width="16" height="16" style="vertical-align: middle;">
+                    ${job.salary || 'Not specified'}
+                    </p>
                     <a href="${job.url}" target="_blank" style="color: #007BFF; text-decoration: none; font-weight: bold;">View Job</a>
                 </div>
                 <hr>
