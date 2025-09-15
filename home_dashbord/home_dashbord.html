@@ -7,7 +7,6 @@
     <title>Dashboard - Trending Jobs</title>
     <link rel="stylesheet" href="home_dashbord.css">
     <link rel="stylesheet" href="home_dashbord_responsive.css">
-    
 </head>
 
 <body>
@@ -52,9 +51,12 @@
                     <img src="../assets/icons/menu_topbar.png" alt="Menu">
                 </button>
 
-                <button class="profile">
-                    <img src="../assets/icons/profile.svg" alt="Profile Icon"> Profile
-                </button>
+                <a href="/profile/profile.html" class="profile-link">
+                    <button class="profile">
+                        <img src="/assets/icons/profile.svg" alt="Profile Icon" />
+                        Profile
+                    </button>
+                </a>
             </div>
         </header>
 
@@ -78,7 +80,35 @@
             <h2>Trending Jobs</h2>
 
             <div class="job-cards-container" id="jobCardsContainer">
-                <!-- Job cards will be dynamically inserted here -->
+                <!-- Example job card structure will be dynamically inserted here -->
+                <div class="job-card">
+                    <div class="job-card-header">
+                        <img src="https://remotive.com/job/2059660/logo" alt="REGEX SEO" class="company-logo-img" />
+                        <div class="job-company">REGEX SEO</div>
+                    </div>
+
+                    <h3 class="job-title">Strategic Content Editor</h3>
+                    <p class="job-location">📍 Mexico</p>
+
+                    <div class="job-info">
+                        <span class="job-type">full_time</span>
+                        <span class="job-date">📅 2025-09-11</span>
+                        <span class="job-salary">💰 $2,000–$4,000 usd/month</span>
+                    </div>
+
+                    <div class="job-tags">
+                        <span>seo</span>
+                        <span>digital marketing</span>
+                        <span>content strategy</span>
+                        <span>editing</span>
+                    </div>
+
+                    <p class="job-snippet">
+                        We are a high-growth marketing agency obsessed with delivering measurable results for our clients. Our growth isn't accidental...
+                    </p>
+
+                    <a href="https://remotive.com/remote-jobs/writing/strategic-content-editor-2059660" class="view-details-btn" target="_blank">View Details</a>
+                    </div>
             </div>
         </section>
     </div>

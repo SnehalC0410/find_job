@@ -1,8 +1,9 @@
+/* Responsive behavior */
 @media (max-width: 768px) {
-    header {
+    .job-cards-container {
         flex-direction: column;
-        align-items: stretch;
-    }
+        align-items: center;
+    } 
 
     .header-group-left,
     .header-group-right {
@@ -37,9 +38,6 @@
         overflow-x: hidden;
     }
 
-    .job-card {
-        width: 100%;
+  .job-card {
+        width: 90%;
     }
-
-
-
