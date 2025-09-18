@@ -98,6 +98,7 @@ body {
     align-items: center;
     transition: all 0.3s ease;
     width: 100%;
+    gap: 8px;
 }
 
 .sidebar nav button:hover {
@@ -249,46 +250,33 @@ header {
     background-color: #ffffff;
 }
 
+.profile-link {
+  text-decoration: none; /* removes underline */
+}
+
 .profile {
-    background-color: #005b96;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 14px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    cursor: pointer;
+  background-color: #005b96;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  
+}
+
+.profile:hover {
+  background-color: #004170; /* optional hover effect */
+  text-decoration: none;    /* ensures underline doesn't return */
 }
 
 .profile img {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
-.action-buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    
-    margin-top: 20px;
-
-}
-
-.action-buttons button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: #005b96;
-    color: #ffffff;
-    border: none;
-    padding: 8px 10px;
-    border-radius: 6px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
 
 .action-buttons button img {
     width: 20px;
