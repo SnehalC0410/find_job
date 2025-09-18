@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Password Reset</title>
   <!-- Link to the main CSS file -->
-    <link rel="stylesheet" href="profile.css">
-    <!-- Link to the responsive CSS file -->
-    <link rel="stylesheet" href="profile_responsive.css">
+  <link rel="stylesheet" href="profile.css">
+  <!-- Link to the responsive CSS file -->
+  <link rel="stylesheet" href="profile_responsive.css">
 </head>
 <body>
     
-    <div class="profile-popup">
-    <button class="close-button">&times;</button>
+  <div class="profile-popup" id="popup">
+    <button class="close-button" id="closeBtn">&times;</button>
 
     <div class="avatar">J</div>
 
@@ -22,10 +22,19 @@
     <button class="edit-profile-btn">        
         <img src="../assets/icons/edit.svg" alt=" edit"> Edit Profile
     </button> 
-    
-</div>
+  </div>
+
+  <script>
+    // Get elements
+    const closeButton = document.getElementById('closeBtn');
+    const popup = document.getElementById('popup');
+
+    // Close popup and redirect on close button click
+    closeButton.addEventListener('click', () => {
+        popup.style.display = 'none';  // Hide the popup
+        window.location.href = 'home.html';  // Redirect to the home or dashboard page
+    });
+  </script>
 
 </body>
 </html>
-
-

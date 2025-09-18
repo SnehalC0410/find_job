@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Trending Jobs</title>
-    <link rel="stylesheet" href="home_dashbord.css">
-    <link rel="stylesheet" href="home_dashbord_responsive.css">
+    <link rel="stylesheet" href="home_dashbord.css"> <!-- Your CSS file -->
 </head>
-
 <body>
     <!-- Left Menu Bar -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
         <div class="logo">
             <img src="../assets/images/leadslocator.svg" alt="Leadslocator Logo">
         </div>
-
-        <nav>
-            <button><img src="../assets/icons/home.svg" alt="Home"></button>
-            <button><img src="../assets/icons/clint.svg" alt="Clients"></button>
-            <button><img src="../assets/icons/onboardings.svg" alt="Onboardings"></button>
-            <button><img src="../assets/icons/analytics.svg" alt="Analytics"></button>
-            <button><img src="../assets/icons/url.svg" alt="URL"></button>
-            <button><img src="../assets/icons/setting.svg" alt="Settings"></button>
+        <nav class="sidebar-nav">
+            <button class="nav-item" id="home">
+                <img src="../assets/icons/home.svg" alt="Home">
+                <span class="nav-text">Home</span>
+            </button>
+            <button class="nav-item" id="clients">
+                <img src="../assets/icons/clint.svg" alt="Clients">
+                <span class="nav-text">Clients</span>
+            </button>             
+            <button class="nav-item" id="clients">
+                <img src="../assets/icons/Onboardings.svg" alt="Clients">
+                <span class="nav-text">Clients</span>
+            </button>
+            <button class="nav-item" id="clients">
+                <img src="../assets/icons/Analytics.svg" alt="Clients">
+                <span class="nav-text">Clients</span>
+            </button>
+            <button class="nav-item" id="clients">
+                <img src="../assets/icons/url.svg" alt="Clients">
+                <span class="nav-text">Clients</span>
+            </button>
+            <button class="nav-item" id="clients">
+                <img src="../assets/icons/setting.svg" alt="Clients">
+                <span class="nav-text">Clients</span>
+            </button>
+            <!-- Additional nav items here -->
         </nav>
-
+        <button class="toggle-arrow" id="toggleArrow">
+            <img src="../assets/icons/arrow-left.svg" alt="Toggle Arrow" id="toggleIcon">
+        </button>
         <button class="logout">
-            <img src="../assets/icons/logout.svg" alt="logout Icon" width="24" height="24"> logout
+            <img src="../assets/icons/logout.svg" alt="Logout Icon"> logout
         </button>
     </aside>
 
@@ -38,19 +55,15 @@
                 <button class="refresh-button">
                     <img src="../assets/icons/refresh.svg" alt="Refresh">
                 </button>
-
                 <input type="text" id="jobSearch" placeholder="Search jobs..." class="search-input" />
             </div>
-
             <div class="header-group-right">
                 <button class="notif-button">
                     <img src="../assets/icons/notifition.svg" alt="Notification">
                 </button>
-
                 <button class="menu-button">
                     <img src="../assets/icons/menu_topbar.png" alt="Menu">
                 </button>
-
                 <a href="/profile/profile.html" class="profile-link">
                     <button class="profile">
                         <img src="/assets/icons/profile.svg" alt="Profile Icon" />
@@ -60,61 +73,15 @@
             </div>
         </header>
 
-        <!-- Action Buttons -->
-        <div class="action-buttons">
-            <button class="advanced-filters">
-                <img src="../assets/icons/adv_filte_b.svg" alt="Advanced Filters Icon"> Advanced Filters
-            </button>
-
-            <button class="grid-view">
-                <img src="../assets/icons/grid_b.svg" alt="Grid View Icon"> Grid View
-            </button>
-
-            <button class="quick">
-                <img src="../assets/icons/quick_b.svg" alt="Quick Icon"> Quick
-            </button>
-        </div>
-
         <!-- Trending Jobs Section -->
         <section class="trending-jobs">
             <h2>Trending Jobs</h2>
-
             <div class="job-cards-container" id="jobCardsContainer">
-                <!-- Example job card structure will be dynamically inserted here -->
-                <div class="job-card">
-                    <div class="job-card-header">
-                        <img src="https://remotive.com/job/2059660/logo" alt="REGEX SEO" class="company-logo-img" />
-                        <div class="job-company">REGEX SEO</div>
-                    </div>
-
-                    <h3 class="job-title">Strategic Content Editor</h3>
-                    <p class="job-location">📍 Mexico</p>
-
-                    <div class="job-info">
-                        <span class="job-type">full_time</span>
-                        <span class="job-date">📅 2025-09-11</span>
-                        <span class="job-salary">💰 $2,000–$4,000 usd/month</span>
-                    </div>
-
-                    <div class="job-tags">
-                        <span>seo</span>
-                        <span>digital marketing</span>
-                        <span>content strategy</span>
-                        <span>editing</span>
-                    </div>
-
-                    <p class="job-snippet">
-                        We are a high-growth marketing agency obsessed with delivering measurable results for our clients. Our growth isn't accidental...
-                    </p>
-
-                    <a href="https://remotive.com/remote-jobs/writing/strategic-content-editor-2059660" class="view-details-btn" target="_blank">View Details</a>
-                    </div>
+                <!-- Dynamic job cards will be inserted here by JavaScript -->
             </div>
         </section>
     </div>
 
-    <!-- Include the JS at the end of the body -->
-    <script src="home_dashboard.js"></script>
+    <script src="home_dashboard.js"></script> <!-- Link to your JavaScript file -->
 </body>
-
 </html>

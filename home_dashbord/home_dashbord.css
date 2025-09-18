@@ -11,6 +11,10 @@ body {
     min-height: 100vh;
 }
 
+
+/* leftmenubar :start */
+
+/* Sidebar container */
 .sidebar {
     width: 180px;
     background-color: #ffffff;
@@ -27,26 +31,73 @@ body {
 
 .sidebar .logo img {
     width: 80px;
-    margin-bottom: 3rem;
+    margin-bottom: 80px;
 }
 
 .sidebar nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 20px;
+}
+
+.sidebar nav button:hover {
+    background-color: #FEF2F3;
+    border-color: #FED8DB;    
+}
+
+.sidebar nav button img {
+    width: 24px;
+    height: 24px;
+    transition: filter 0.3s ease;
+}
+
+/* Hiding text when the sidebar is collapsed */
+.sidebar.collapsed .nav-text {
+    display: none;
+}
+
+/* Arrow icon for collapsing */
+/* Adjusted toggle button positioning */
+.toggle-arrow {
+    position: absolute; /* Use absolute positioning */
+    top: 100px; /* Move the button 150px down from the top */
+    right: 0; /* Align the button to the right side */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.toggle-arrow img {
+    width: 24px;
+    height: 24px;
+    transform: rotate(180deg); /* Initially show the left arrow */
+    transition: transform 0.3s ease;
+}
+
+
+/* When sidebar is collapsed, rotate arrow */
+.sidebar.collapsed .toggle-arrow img {
+    transform: rotate(0deg);
+}
+
+/* Align icon and text */
+.nav-item img {
+    width: 24px;
+    height: 24px;
 }
 
 .sidebar nav button {
     background-color: #ffffff;
-    border: 2px solid #ccc;
-    border-radius: 50%;
+    border: 2px solid #f0eeee;
+    border-radius: 8px;
     padding: 10px;
     cursor: pointer;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     transition: all 0.3s ease;
+    width: 100%;
 }
 
 .sidebar nav button:hover {
@@ -99,6 +150,9 @@ body {
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 /* logout botton transition */
+
+
+/* end left bar */
 
 
 /* topheader dashbord */
@@ -217,7 +271,9 @@ header {
     justify-content: flex-end;
     gap: 1rem;
     margin-bottom: 1.5rem;
-    padding: 20px 20px;
+    
+    margin-top: 20px;
+
 }
 
 .action-buttons button {
@@ -280,242 +336,133 @@ header {
     box-sizing: border-box;
 }
 
-/* .job-cards-container {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 1rem;
+
+
+.trending-jobs {
+    padding: 20px 20px 20px; /* Increased top padding from heading */
 }
 
+
+/* Container for all job cards */
+.job-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+    justify-items: center;
+}
+
+/* Individual card style */
 .job-card {
-    background-color: #ffffff;
+    width: 100%;
+    max-width: 300px;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding: 16px;
-    max-width: 400px;
-    flex: 1 1 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    transition: transform 0.2s ease;
+    font-family: Arial, sans-serif;
+    min-height: 350px;
 }
 
-.job-card:hover {
-    transform: translateY(-5px);
+.job-description {
+    font-size: 0.85rem;
+    max-height: 100px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
 }
 
-.job-card-header {
+.job-card-top {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    background-color: #EEF7FD;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: #fff;
 }
 
 .company-logo {
     width: 40px;
     height: 40px;
-    background-color: #005b96;
-    color: white;
+    border: 2px solid #09436A; /* Outline color */
     border-radius: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-weight: bold;
-    font-size: 20px;
-}
-.job-location {
-    font-size: 0.95rem;
-    color: #555;
-}
-
-.job-info span {
-    display: inline-block;
-    background-color: #eef5fb;
-    padding: 4px 8px;
-    border-radius: 4px;
-    margin-right: 8px;
-    font-size: 0.85rem;
-}
-
-.job-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.job-tags span {
-    display: inline-block;
-    background-color: #e1f0ff;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-}
-
-.job-snippet {
-    font-size: 0.9rem;
-    color: #333;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.view-details-btn {
-    display: inline-block;
-    text-decoration: none;
-    background-color: #005b96;
-    color: white;
-    padding: 8px;
-    border-radius: 4px;
-    text-align: center;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.view-details-btn:hover {
-    background-color: #004170;
-}
-
-
-
-
-.job-header {
-    display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #09436A;
+    background-color: #fbfbfc;
 }
 
-.new-label {
-    background-color: red;
-    color: #fff;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 0.5rem 0;
-}
-
-.tags span {
-    background-color: #eef5fb;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-}
-
-.view-details {
-    background-color: #005b96;
-    color: #fff;
+.card-actions button {
+    background: none;
     border: none;
-    padding: 0.5rem;
-    border-radius: 4px;
+    margin-left: 8px;
     cursor: pointer;
-    width: 100%;
-    text-align: center;
-} */
-/* Container for all job cards */
-.job-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  justify-content: flex-start;
 }
 
-/* Individual card style */
-.job-card {
-  width: 300px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  font-family: Arial, sans-serif;
+.card-actions img {
+    width: 24px;
+    height: 24px;
 }
 
-/* Company Logo */
-.job-card img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-
-/* Title */
 .job-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 10px 0 5px;
 }
 
-/* Company name */
 .job-company {
-  color: #555;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    align-items: center;
+    
 }
 
-/* Location, type, salary, etc. */
-.job-info span {
-  display: block;
-  font-size: 0.85rem;
-  margin: 2px 0;
+.job-info {
+    display: flex;
+    gap: 15px;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
 }
 
-/* Tags */
-.job-tags {
-  margin-top: 8px;
-}
-
-.job-tags span {
-  display: inline-block;
-  background-color: #e0f0ff;
-  color: #007bff;
-  padding: 2px 6px;
-  margin: 2px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-}
-
-/* Description area with scroll */
 .job-description {
-  margin-top: 10px;
-  font-size: 0.85rem;
-  line-height: 1.4;
-  max-height: 100px;
-  overflow: hidden;
-  position: relative;
+    font-size: 0.85rem;
+    max-height: 100px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
 }
 
 .job-description::after {
-  content: '';  
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 30px;
-  width: 100%;
-  background: linear-gradient(to bottom, transparent, white);
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    background: linear-gradient(to bottom, transparent, white);
 }
 
-/* View Job button */
 .view-details-btn {
-  margin-top: 10px;
-  background-color: #007bff;
-  color: white;
-  padding: 6px 12px;
-  text-align: center;
-  border-radius: 4px;
-  font-size: 16px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+    display: block;
+    text-align: center;
+    background-color: #0c5586;
+    color: white;
+    padding: 8px 0;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Push the button to the bottom */
 }
 
 .view-details-btn:hover {
-  background-color: #0056b3;
+    background-color: #09436A;
 }
+
 

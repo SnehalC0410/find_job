@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Profile</title>
+  <!-- Link to the main CSS file -->
+  <link rel="stylesheet" href="edit_profile.css">
+  <!-- Link to the responsive CSS file -->
+  <link rel="stylesheet" href="edit_profile_responsie.css">
+</head>
+<body>
+    
+  <div class="profile-popup" id="popup">
+    <button class="close-button" id="closeBtn">&times;</button>
+
+    <div class="avatar">J</div>
+
+    <h2>Hi, Jon!</h2>
+    <p>dicock23jon@gmail.com</p>
+
+    <!-- Edit Profile Form -->
+    <form id="editProfileForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required />
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email" value="dicock23jon@gmail.com" required />
+        </div>
+
+        <div class="form-group">
+            <label for="role">Role</label>
+            <input type="text" id="role" placeholder="Role" required />
+        </div>
+
+        <div class="form-group">
+            <label for="designation">Designation</label>
+            <input type="text" id="designation" placeholder="Designation" required />
+        </div>
+
+        <button type="submit" class="edit-profile-btn">
+            Save Profile
+        </button>
+    </form>
+
+    <!-- Popup Message -->
+    <div id="popupMessage" class="popup-message">
+        <p>Profile updated successfully!</p>
+    </div>
+  </div> 
+
+  <!-- link .js file -->
+  <script scr="edit_profile.js"> </script>
+
+</body>
+</html>

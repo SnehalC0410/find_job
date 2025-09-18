@@ -1,9 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.querySelector('.sidebar');
+    const toggleArrow = document.querySelector('.toggle-arrow');
     const jobSearchInput = document.getElementById('jobSearch');
     const jobCardsContainer = document.getElementById('jobCardsContainer');
     let allJobs = [];
-
     const remotiveApiURL = 'https://remotive.com/api/remote-jobs';
+
+    // Toggle Sidebar Collapse/Expand
+    toggleArrow.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+    });
 
     function showLoading() {
         jobCardsContainer.innerHTML = '<p>Loading job listings...</p>';
@@ -26,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => {
                 console.error("Error fetching data:", error);
-                alert("There was an error fetching the job listings. Please try again later.");
+                alert("Error fetching job listings. Please try again later.");
                 throw error;
             });
     }
@@ -49,37 +55,35 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        jobCardsContainer.innerHTML = jobs.map(job => `
-            <div class="job-card">
-                <div class="job-header">
-                    <img src="${job.company_logo}" alt="${job.company_name} Logo" style="width: 50px; height: 50px; object-fit: contain;">
-                    <h3>${job.title}</h3>
-                    <p><strong>Company:</strong> ${job.company_name}</p>
-                    
-                    <p>
-                    <img src="../assets/icons/location_trd_card.svg" alt="Location Icon"  style="vertical-align: middle;">
-                    ${job.candidate_required_location}
-                    </p>
+        jobCardsContainer.innerHTML = jobs.map(job => {
+            const companyInitial = job.company_name ? job.company_name.charAt(0).toUpperCase() : '?';
+            return `
+                <div class="job-card">
+                    <div class="job-card-top">
+                        <div class="company-logo">${companyInitial}</div>
+                        <div class="card-actions">
+                            <button title="Copy Link"><img src="../assets/icons/copy_card.svg" alt="Copy"></button>
+                            <button title="Share"><img src="../assets/icons/share_card.svg" alt="Share"></button>
+                            <button title="External Link"><img src="../assets/icons/linkcopy_card.svg" alt="Link"></button>
+                        </div>
+                    </div>
 
-                    <span><strong>Type:</strong> ${job.job_type === 'full_time' ? 'Full Time' : 'Part Time'}</span><br>
-                    <span><strong>Salary:</strong> ${job.salary || 'Not specified'}</span><br>
-                    <p>
-                     <img src="../assets/icons/work_outline.svg" alt="Type Icon" width="10" height="10" style="vertical-align: middle;">
-                    ${job.job_type === 'full_time' ? 'Full Time' : 'Part Time'}
-                </p>
+                    <h3 class="job-title">${job.title}</h3>
+                    <p class="job-company"><img src="../assets/icons/location_trd_card.svg" alt="Location"> ${job.candidate_required_location}</p>
 
-                    <p> 
-                    <img src="../assets/icons/calender_trd_card.svg" alt="Salary Icon" width="16" height="16" style="vertical-align: middle;">
-                    ${job.salary || 'Not specified'}
-                    </p>
-                    <a href="${job.url}" target="_blank" style="color: #007BFF; text-decoration: none; font-weight: bold;">View Job</a>
+                    <div class="job-info">
+                        <span><strong>Type:</strong> ${job.job_type === 'full_time' ? 'Full Time' : 'Part Time'}</span>
+                        <span><strong>Salary:</strong> ${job.salary || 'Not specified'}</span>
+                    </div>
+
+                    <div class="job-description">
+                        ${job.description}
+                    </div>
+
+                    <a href="${job.url}" target="_blank" class="view-details-btn">Job Details</a>
                 </div>
-                <hr>
-                <div class="job-description">
-                    ${job.description}
-                </div>
-            </div>
-        `).join('');
+            `;
+        }).join('');
     }
 
     jobSearchInput.addEventListener('input', () => {
