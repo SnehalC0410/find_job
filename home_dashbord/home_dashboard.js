@@ -1,13 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.querySelector('.sidebar');
     const toggleArrow = document.querySelector('.toggle-arrow');
+    const logo = document.querySelector('.logo');  // 🔹 Select the logo
     const jobSearchInput = document.getElementById('jobSearch');
     const jobCardsContainer = document.getElementById('jobCardsContainer');
     let allJobs = [];
     const remotiveApiURL = 'https://remotive.com/api/remote-jobs';
 
-    // Toggle Sidebar Collapse/Expand
-    toggleArrow.addEventListener('click', () => {
+    // Toggle Sidebar Collapse/Expand (arrow button)
+    
+    // toggleArrow.addEventListener('click', () => {
+    //     sidebar.classList.toggle('collapsed');
+    // });
+
+    // 🔹 Toggle Sidebar Collapse/Expand (logo click)
+    logo.addEventListener('click', () => {
         sidebar.classList.toggle('collapsed');
     });
 

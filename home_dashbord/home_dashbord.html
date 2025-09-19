@@ -39,9 +39,9 @@
             </button>
             <!-- Additional nav items here -->
         </nav>
-        <button class="toggle-arrow" id="toggleArrow">
+        <!-- <button class="toggle-arrow" id="toggleArrow">
             <img src="../assets/icons/arrow-left.svg" alt="Toggle Arrow" id="toggleIcon">
-        </button>
+        </button> -->
         <button class="logout">
             <img src="../assets/icons/logout.svg" alt="Logout Icon"> logout
         </button>
@@ -70,16 +70,30 @@
                         Profile
                     </button>
                 </a>
-            </div>
+            </div>         
         </header>
 
-        <!-- Trending Jobs Section -->
-        <section class="trending-jobs">
-            <h2>Trending Jobs</h2>
+           <!-- Toolbar Buttons -->
+      <div class="jobs-toolbar">
+         <button id="filterBtn" class="toolbar-btn active">
+          <img src="../assets/icons/adv_filte_b.svg" alt="Filters"> Advanced Filters
+        </button>
+         <button id="gridBtn" class="toolbar-btn">
+          <img src="../assets/icons/grid_b.svg" alt="Grid"> Grid View
+        </button>
+         <button id="quickBtn" class="toolbar-btn">
+        <img src="../assets/icons/quick_b.svg" alt="Quick"> Quick
+         </button>
+    </div>  
+
+         <!-- Trending Jobs Section -->
+         <section class="trending-jobs">
+          <h2>Trending Jobs</h2>
             <div class="job-cards-container" id="jobCardsContainer">
-                <!-- Dynamic job cards will be inserted here by JavaScript -->
-            </div>
-        </section>
+              <!-- Dynamic job cards -->
+    </div>
+</section>
+
     </div>
 
     <script src="home_dashboard.js"></script> <!-- Link to your JavaScript file -->

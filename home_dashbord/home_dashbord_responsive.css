@@ -33,6 +33,17 @@
         flex-direction: column;
     }
 
+    /* Responsive: stack buttons on small screens */
+
+    .jobs-toolbar {
+        flex-direction: column;
+        width: 100%;
+    }
+    .toolbar-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
     .job-cards-container {
         flex-direction: column;
         overflow-x: hidden;
@@ -41,4 +52,5 @@
   .job-card {
         width: 90%;
     }
-    
+
+ 

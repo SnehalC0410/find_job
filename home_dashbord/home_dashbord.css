@@ -306,6 +306,67 @@ header {
     filter: brightness(0) invert(1); /* Makes icon white */
 }
 
+/* Toolbar container */
+.jobs-toolbar {
+    display: flex;
+    gap: 12px;
+    padding-top: 30px;   /* 20px margin from top */
+    justify-content: flex-end; /* Align right */
+}
+
+/* Common button styles */
+.toolbar-btn {
+    background-color: transparent;
+    border: 2px solid #09436A;
+    color: #09436A;
+    padding: 6px 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.toolbar-btn img {
+    width: 18px;
+    height: 18px;
+    transition: filter 0.3s ease;
+}
+
+/* 🔹 Special style ONLY for Advanced Filters */
+#filterBtn {
+    background-color: #005b96;   /* Default background */
+    color: #fff;
+    border: 2px solid #005b96;
+}
+
+#filterBtn:hover {
+    background-color: #09436A;   /* Hover background */
+    border-color: #09436A;
+    color: #fff;
+}
+
+#filterBtn:hover img {
+    filter: brightness(0) invert(1); /* Make icon white */
+}
+
+/* 🔹 Hover / Active effect for other buttons */
+.toolbar-btn:not(#filterBtn):hover,
+.toolbar-btn:not(#filterBtn).active {
+    background-color: #09436A;
+    border-color: #09436A;
+    color: #fff;
+}
+
+.toolbar-btn:not(#filterBtn):hover img,
+.toolbar-btn:not(#filterBtn).active img {
+    filter: brightness(0) invert(1);
+}
+
+/* end toolbar-btn */
+
 
 .trending-jobs {
     padding: 20px;
@@ -454,3 +515,4 @@ header {
 }
 
 
+    
